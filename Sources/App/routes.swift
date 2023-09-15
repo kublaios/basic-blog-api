@@ -1,14 +1,10 @@
-import Fluent
 import Vapor
 
 func routes(_ app: Application) throws {
-    app.get { req async in
-        "It works!"
+    app.get { (req: Request) throws -> HTTPStatus in
+        throw Abort(.notFound)
     }
 
-    app.get("hello") { req async -> String in
-        "Hello, world!"
-    }
-
-    try app.register(collection: TodoController())
+    // TODO: Register new routes below
+    // try app.register()
 }

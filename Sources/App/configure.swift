@@ -21,7 +21,8 @@ public func configure(_ app: Application) async throws {
         }()
     ), as: .mysql)
 
-    app.migrations.add(CreateTodo())
+    app.migrations.add(CreateUsersTableMigration())
+    app.migrations.add(CreatePostsTableMigration())
 
     // register routes
     try routes(app)
