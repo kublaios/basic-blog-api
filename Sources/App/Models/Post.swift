@@ -1,7 +1,7 @@
-import Fluent
 import Vapor
+import FluentKit
 
-final class Post: Model {
+final class Post: Model, Content {
     static var schema = "posts"
 
     @ID(key: .id)

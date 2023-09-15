@@ -5,6 +5,6 @@ func routes(_ app: Application) throws {
         throw Abort(.notFound)
     }
 
-    // TODO: Register new routes below
-    // try app.register()
+    try app.register(collection: UserController())
+    try app.register(collection: PostController())
 }
